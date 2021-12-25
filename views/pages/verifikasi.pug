@@ -1,0 +1,38 @@
+extends ../layout
+
+block content
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  if status== 1
+    <div class="container">
+      <div class="row text-center">
+        <div class="col-sm-6 col-sm-offset-3">
+          </br></br> 
+          <h2 style="color:#0fad00">Success</h2>
+          
+          <h3>Dear, #{nama}</h3>
+          <p style="font-size:20px;color:#5C5C5C;">
+            Thank you for verifying your account
+          </p>
+          <a href="/login" class="btn btn-success">Log in </a>
+          <br><br>
+        </div>
+          
+      </div>
+    </div>
+
+  else
+
+    <div class="container">
+      <div class="row text-center">
+        <div class="col-sm-6 col-sm-offset-3">
+          </br></br> 
+          <h2 style="color:#0fad00">Data has been verified</h2>
+          
+        </div>
+          
+      </div>
+    </div>

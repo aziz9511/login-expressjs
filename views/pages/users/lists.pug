@@ -1,0 +1,65 @@
+extends ../../layout
+
+block content
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">Dasboard</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li class=""><a href="/admin">Home</a></li>
+        <li class="active"><a href="/admin/users">User</a></li>
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container mt-5">
+      <div class="row">
+          <div class="col-md-12">
+
+              <div class="card border-0 shadow rounded">
+                  <div class="card-body">
+                     
+                      <table class="table table-bordered">
+                          <thead>
+                            <tr>
+                              <th scope="col">UserName</th>
+                              <th scope="col">Email</th>
+                              <th scope="col">Channel</th>
+                              <th scope="col">Active</th>
+                              <th scope="col">Status</th>
+                              <th scope="col">Action</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                              each val, key in data
+                                <tr>
+                                    td= val.name
+                                    td= val.email
+                                    td= val.channel
+                                    td= val.active ? 'Active':''
+                                    td= val.confirm
+                                    <td>
+                                      <a href="/admin/users/#{val.id}">EDIT</a>
+                                    </td>
+                                </tr>
+                          </tbody>
+                      </table>  
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+  </script>
