@@ -62,8 +62,8 @@ const register = (req, res) => {
   var token = md5(name+email+"verifikasiemailuser");
 
   var mailOptions = {
-      from: 'emailjunk430@gmail.com',  // sender address
-      to: 'aziz8009@gmail.com',   // list of receivers
+      from: process.env.EMAIL_FROM,  // sender address
+      to: email,   // list of receivers
       subject: 'Email verification',
       text: '',
       html: '<b>Hey '+name+'! </b> <br> Please click this link for verificatiom </br> <a href="'+process.env.DOMAIN+'verification/'+token+'">verification email Here</a><br/>',
@@ -115,8 +115,8 @@ const logout = (req, res) => {
 var transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-        user: 'emailjunk430@gmail.com',
-        pass: 'mabdulaziz2014tix',
+        user: process.env.EMAIL_FROM,
+        pass: process.env.EMAIL_PASS,
     }
 });
 
